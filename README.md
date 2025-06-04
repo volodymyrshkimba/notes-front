@@ -22,7 +22,8 @@ This project is the frontend part of a web application for creating, editing, de
 
 - **Framework:** React (Vite)
 - **HTTP Client:** axios
-- **Backend API URL:** e.g. `https://notes-back-8271.onrender.com` (Code Link)[https://github.com/volodymyrshkimba/notes-back]
+- **Backend API URL:** e.g. `https://notes-back-8271.onrender.com`
+- **Backend Repository:** [GitHub - notes-back](https://github.com/volodymyrshkimba/notes-back)
 - **Components:** Functional components, React Context and React Hooks
 - **Form Validation:** Basic validation for note title and content inputs (Yup)
 - **Responsive Design:** Responsive layout for different screen sizes
