@@ -1,4 +1,10 @@
 .loaderWrapper {
-  max-width: 100px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.message {
+  color: var(--color-dark);
 }
