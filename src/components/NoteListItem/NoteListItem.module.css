@@ -2,18 +2,11 @@
   padding: 40px;
   background-color: var(--color-light);
   border-radius: 8px;
-
   color: var(--color-gray);
   box-shadow: var(--shadow-regular);
-
   position: relative;
-  width: calc((100% - 20px * 3) / 4);
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  word-break: break-word;
 }
 
 .button {

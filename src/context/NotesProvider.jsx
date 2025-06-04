@@ -3,36 +3,10 @@ import axios from "axios";
 import { NotesContext } from "./notesContext.js";
 import { useEffect, useState } from "react";
 
-axios.defaults.baseURL = "https://notes";
+axios.defaults.baseURL = "http://localhost:3000";
 
 export const NotesProvider = ({ children }) => {
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      title: "go",
-      content: "home",
-    },
-    {
-      id: 2,
-      title: "go",
-      content: "home",
-    },
-    {
-      id: 3,
-      title: "go",
-      content: "home",
-    },
-    {
-      id: 4,
-      title: "go",
-      content: "home",
-    },
-    {
-      id: 5,
-      title: "go",
-      content: "home",
-    },
-  ]);
+  const [notes, setNotes] = useState([]);
 
   useEffect(() => {
     const getAllNotes = async () => {
@@ -59,7 +33,7 @@ export const NotesProvider = ({ children }) => {
   const deleteNote = async (noteId) => {
     try {
       await axios.delete(`/notes/${noteId}`);
-      setNotes((prevNotes) => prevNotes.filter((note) => note.id !== noteId));
+      setNotes((prevNotes) => prevNotes.filter((note) => note._id !== noteId));
     } catch (error) {
       console.log(error);
     }
@@ -67,11 +41,11 @@ export const NotesProvider = ({ children }) => {
 
   const updateNote = async (noteId, updatedData) => {
     try {
-      const response = await axios.put(`/notes/${noteId}`, updatedData);
+      const response = await axios.patch(`/notes/${noteId}`, updatedData);
       const updatedNote = response.data;
 
       setNotes((prevNotes) =>
-        prevNotes.map((note) => (note.id === noteId ? updatedNote : note))
+        prevNotes.map((note) => (note._id === noteId ? updatedNote : note))
       );
     } catch (error) {
       console.log(error);

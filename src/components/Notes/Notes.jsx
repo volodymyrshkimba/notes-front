@@ -1,6 +1,6 @@
 import { useState } from "react";
 import EditForm from "../EditForm/EditForm";
-import Form from "../Form/Form";
+import NoteForm from "../NoteForm/NoteForm";
 import NoteList from "../NoteList/NoteList";
 
 const Notes = () => {
@@ -19,7 +19,7 @@ const Notes = () => {
       {noteToEdit ? (
         <EditForm noteToEdit={noteToEdit} cancelUpdate={cancelUpdate} />
       ) : (
-        <Form />
+        <NoteForm />
       )}
 
       <NoteList handleChangeEditing={handleChangeEditing} />

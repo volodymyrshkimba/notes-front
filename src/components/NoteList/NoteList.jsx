@@ -1,4 +1,5 @@
 import { useNotes } from "../../context/notesContext";
+
 import NoteListItem from "../NoteListItem/NoteListItem";
 
 import css from "./NoteList.module.css";
@@ -10,10 +11,10 @@ const NoteList = ({ handleChangeEditing }) => {
     <ul className={css.list}>
       {notes.map((note, i) => (
         <NoteListItem
-          key={note.id}
+          key={note._id}
           title={note.title}
           content={note.content}
-          id={note.id}
+          id={note._id}
           count={i + 1}
           handleChangeEditing={handleChangeEditing}
         />
