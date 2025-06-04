@@ -6,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background: linear-gradient(to bottom, #2b365c, #ac6262);
+  background: var(--color-mainBackground);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -59,10 +59,4 @@ button {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }

@@ -20,7 +20,7 @@ const EditForm = ({ noteToEdit, cancelUpdate }) => {
       return;
     }
 
-    await updateNote(noteToEdit.id, { title, content });
+    await updateNote({ ...noteToEdit, title, content });
     cancelUpdate();
   };
 

@@ -1,0 +1,40 @@
+.inputsWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.input {
+  height: 56px;
+
+  border: 1px solid var(--color-dark);
+  background-color: transparent;
+
+  padding: 16px;
+  padding-right: 40px;
+  outline: none;
+
+  transition: var(--animation-cubicBezier);
+
+  font-size: var(--font-medium);
+  color: var(--color-dark);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+
+  &::placeholder {
+    font-weight: 200;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .input:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .inputsWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+}

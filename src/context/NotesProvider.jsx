@@ -7,14 +7,18 @@ axios.defaults.baseURL = "http://localhost:3000";
 
 export const NotesProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
+  const [loading, setloading] = useState(false);
 
   useEffect(() => {
     const getAllNotes = async () => {
       try {
+        setloading(true);
         const response = await axios.get("/notes");
         setNotes(response.data);
       } catch (error) {
         console.log(error);
+      } finally {
+        setloading(false);
       }
     };
     getAllNotes();
@@ -39,13 +43,18 @@ export const NotesProvider = ({ children }) => {
     }
   };
 
-  const updateNote = async (noteId, updatedData) => {
+  const updateNote = async (updatedData) => {
     try {
-      const response = await axios.patch(`/notes/${noteId}`, updatedData);
+      const response = await axios.put(
+        `/notes/${updatedData._id}`,
+        updatedData
+      );
       const updatedNote = response.data;
 
       setNotes((prevNotes) =>
-        prevNotes.map((note) => (note._id === noteId ? updatedNote : note))
+        prevNotes.map((note) =>
+          note._id === updatedData._id ? updatedNote : note
+        )
       );
     } catch (error) {
       console.log(error);
@@ -53,7 +62,9 @@ export const NotesProvider = ({ children }) => {
   };
 
   return (
-    <NotesContext.Provider value={{ notes, addNote, deleteNote, updateNote }}>
+    <NotesContext.Provider
+      value={{ notes, addNote, deleteNote, updateNote, loading }}
+    >
       {children}
     </NotesContext.Provider>
   );
