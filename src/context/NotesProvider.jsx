@@ -3,7 +3,7 @@ import axios from "axios";
 import { NotesContext } from "./notesContext.js";
 import { useEffect, useState } from "react";
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "https://notes-back-8271.onrender.com";
 
 export const NotesProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
