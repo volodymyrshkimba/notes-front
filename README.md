@@ -1,12 +1,43 @@
-# React + Vite
+![](https://github.com/volodymyrshkimba/notes-front/blob/main/public/favicon.png?raw=true)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Daily Notes — Frontend
 
-Currently, two official plugins are available:
+This project is the frontend part of a web application for creating, editing, deleting, and viewing notes. Built with React using Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Create a new note (title and content)
+- View a list of notes
+- Edit an existing note
+- Delete a note
+- Search notes by title
+- Filter notes by date
+- Communicate with the backend via REST API using HTTP requests (axios)
+
+---
+
+## Technical Details
+
+- **Framework:** React (Vite)
+- **HTTP Client:** axios
+- **Backend API URL:** e.g. `https://notes-back-8271.onrender.com`
+- **Components:** Functional components, React Context and React Hooks
+- **Form Validation:** Basic validation for note title and content inputs (Yup)
+- **Responsive Design:** Responsive layout for different screen sizes
+
+---
+
+## Getting Started
+
+### Install dependencies
+
+```bash
+npm install
+
+npm run dev
+```
+## Author
+Volodymyr Shkimba
+
